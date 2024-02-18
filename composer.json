@@ -1,0 +1,13 @@
+{
+    "name": "hexlet/code",
+    "description": "HEXLET",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maxim Raychuk",
+            "email": "raychukmaxim@gmail.com"
+        }
+    ],
+    "require": {}
+}
