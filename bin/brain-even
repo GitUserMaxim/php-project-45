@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
-namespace BrainGames\Cli;
+namespace BrainGames\even;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 
@@ -12,4 +12,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-run();
+even();
