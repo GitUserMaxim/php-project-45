@@ -10,3 +10,5 @@ beauty:
 	composer exec --verbose phpcbf -- --standard=PSR12 src bin
 brain-even:
 	bin/brain-even
+brain-calc:
+	bin/brain-calc

@@ -6,3 +6,6 @@
 View the recording at:
 
     https://asciinema.org/a/ZZgScA3mA2IIQsKTx9k4OEaX2asciinem
+
+     asciinema 6 step
+    [![asciicast](https://asciinema.org/a/647801.svg)](https://asciinema.org/a/647801)
