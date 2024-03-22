@@ -3,9 +3,11 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/38e15c732eefb6a05c35/maintainability)](https://codeclimate.com/github/GitUserMaxim/php-project-45/maintainability)
 
-View the recording at:
-
+     asciinema 5 step 
     https://asciinema.org/a/ZZgScA3mA2IIQsKTx9k4OEaX2asciinem
 
-     asciinema 6 step
-    [![asciicast](https://asciinema.org/a/647801.svg)](https://asciinema.org/a/647801)
+     asciinema 6 step calc
+    <a href="https://asciinema.org/a/647801" target="_blank"><img src="https://asciinema.org/a/647801.svg" /></a>
+
+     asciinema 7 step gcd
+    <script src="https://asciinema.org/a/yJ6PRxkNUvk7aydaEQ0TjlOZP.js" id="asciicast-648500" async="true"></script>
