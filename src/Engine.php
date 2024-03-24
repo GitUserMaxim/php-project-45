@@ -10,6 +10,7 @@ use function BrainGames\Calc\generateNumberCalc;
 use function BrainGames\Calc\correctAnswerCalc;
 use function BrainGames\Gcd\generateNumberGcd;
 use function BrainGames\Gcd\correctAnswerGcd;
+use function BrainGames\Progression\generateNumberProgression;
 
 function runGame($rule, $game)
 {
@@ -31,6 +32,11 @@ function runGame($rule, $game)
                 $number = generateNumberGcd();
                 list($num1, $num2) = sscanf($number, "%d %d");
                 $correctAnswer = correctAnswerGcd($num1, $num2);
+                break;
+            case '4':
+                $data = generateNumberProgression();
+                $number = $data['question'];
+                $correctAnswer = $data['correctAnswer'];
                 break;
         }
         askQuestion($number);
