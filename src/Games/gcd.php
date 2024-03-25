@@ -13,7 +13,7 @@ function generateNumberGcd()
 {
     $num1 = rand(1, 100);
     $num2 = rand(1, 100);
-    $number = $num1 . " " . $num2;
+    $number = "{$num1} {$num2}";
     return $number;
 }
 function correctAnswerGcd($num1, $num2)

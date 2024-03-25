@@ -13,7 +13,7 @@ function generateNumberCalc(): string
     $signArr = ['+', '-', '*'];
     $num3 = rand(0, 2);
     $sign = $signArr[$num3];
-    $number = $num1 . " " . $sign . " " . $num2;
+    $number = "{$num1} {$sign} {$num2}";
     return $number;
 }
 function correctAnswerCalc($num1, $sign, $num2)
