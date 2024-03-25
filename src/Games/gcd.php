@@ -4,9 +4,6 @@ namespace BrainGames\Gcd;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-use function cli\line;
-use function cli\prompt;
-
 use function BrainGames\Engine\runGame;
 
 function generateNumberGcd()
