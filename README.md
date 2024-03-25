@@ -1,4 +1,4 @@
-### Brain games
+#### Brain games
 <p>Brain games is a set of five console games built on the principle of popular mobile brain training applications. Each game poses questions that require correct answers. After three correct answers, the game is considered passed. Incorrect answers end the game and offer to start over.</p>
 
 ### The games are:<br>
@@ -34,7 +34,8 @@ $ make install
 [![Maintainability](https://api.codeclimate.com/v1/badges/38e15c732eefb6a05c35/maintainability)](https://codeclimate.com/github/GitUserMaxim/php-project-45/maintainability) <br> 
 
 
-Game - Prime Numbers:
+Game - Prime Numbers: <br>
+
 [![asciicast](https://asciinema.org/a/648929.svg)](https://asciinema.org/a/648929) <br>
 
 Game - Calculator:

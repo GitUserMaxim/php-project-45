@@ -6,14 +6,14 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 use function BrainGames\Engine\runGame;
 
-function generateNumberGcd()
+function generateNumberGcd(): string
 {
     $num1 = rand(1, 100);
     $num2 = rand(1, 100);
     $number = "{$num1} {$num2}";
     return $number;
 }
-function correctAnswerGcd($num1, $num2)
+function correctAnswerGcd(int $num1, int $num2): string
 {
     while ($num2 != 0) {
         $temp = $num1 % $num2;
@@ -23,14 +23,14 @@ function correctAnswerGcd($num1, $num2)
 
     return $num1;
 }
-function rulesGcd()
+function rulesGcd(): string
 {
     $rule = "Find the greatest common divisor of given numbers.";
     return $rule;
 }
 
 
-function gcdGame()
+function gcdGame(): void
 {
     $game = 3;
     $rule = rulesGcd();

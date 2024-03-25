@@ -28,14 +28,14 @@ function generateNumberProgression()
     return ['question' => $number, 'correctAnswer' => $correctAnswer];
 }
 
-function rulesProgression()
+function rulesProgression(): string
 {
     $rule = "What number is missing in the progression?";
     return $rule;
 }
 
 
-function progressionGame()
+function progressionGame(): void
 {
     $game = 4;
     $rule = rulesProgression();

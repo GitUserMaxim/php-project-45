@@ -16,7 +16,7 @@ function generateNumberCalc(): string
     $number = "{$num1} {$sign} {$num2}";
     return $number;
 }
-function correctAnswerCalc($num1, $sign, $num2)
+function correctAnswerCalc(int $num1, string $sign, int $num2): string
 {
     switch ($sign) {
         case '+':

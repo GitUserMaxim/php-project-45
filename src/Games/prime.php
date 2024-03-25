@@ -11,7 +11,7 @@ function generateNumberPrime(): int
     $number = rand(1, 100);
     return $number;
 }
-function correctAnswerPrime($number)
+function correctAnswerPrime(int $number): bool
 {
     if ($number <= 1) {
         return false;
@@ -30,14 +30,14 @@ function correctAnswerPrime($number)
     }
         return true;
 }
-function rulesPrime()
+function rulesPrime(): string
 {
     $rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     return $rule;
 }
 
 
-function primeGame()
+function primeGame(): void
 {
     $game = 5;
     $rule = rulesPrime();
