@@ -11,6 +11,8 @@ use function BrainGames\Calc\correctAnswerCalc;
 use function BrainGames\Gcd\generateNumberGcd;
 use function BrainGames\Gcd\correctAnswerGcd;
 use function BrainGames\Progression\generateNumberProgression;
+use function BrainGames\Prime\generateNumberPrime;
+use function BrainGames\Prime\correctAnswerPrime;
 
 function runGame($rule, $game)
 {
@@ -37,6 +39,10 @@ function runGame($rule, $game)
                 $data = generateNumberProgression();
                 $number = $data['question'];
                 $correctAnswer = $data['correctAnswer'];
+                break;
+            case '5':
+                $number = generateNumberPrime();
+                $correctAnswer = correctAnswerPrime($number) ? 'yes' : 'no';
                 break;
         }
         askQuestion($number);
