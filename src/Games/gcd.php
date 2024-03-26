@@ -6,14 +6,14 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 use function BrainGames\Engine\runGame;
 
-function generateNumberGcd(): string
+function generateNumberGcd(): mixed
 {
     $num1 = rand(1, 100);
     $num2 = rand(1, 100);
     $number = "{$num1} {$num2}";
-    return $number;
+    return [$number, $num1, $num2];
 }
-function correctAnswerGcd(int $num1, int $num2): string
+function correctAnswerGcd(int $num1, int $num2): int
 {
     while ($num2 != 0) {
         $temp = $num1 % $num2;

@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 use function BrainGames\Engine\runGame;
 
-function generateNumberProgression()
+function generateNumberProgression(): mixed
 {
     $start = rand(1, 10);
     $diff = rand(1, 5);
