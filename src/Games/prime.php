@@ -23,7 +23,7 @@ function correctAnswerPrime(int $number): bool
         return false;
     }
         $maxDivisor = sqrt($number);
-    for ($i = 3; $i < $maxDivisor; $i += 2) {
+    for ($i = 3; $i <= $maxDivisor; $i += 2) {
         if ($number % $i == 0) {
             return false;
         }
