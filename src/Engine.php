@@ -30,7 +30,7 @@ function runGame(string $rule, int $game): void
             case 2:
                 $data = generateNumberCalc();
                 $sign = $data[1];
-                $num1 = $data[0]; 
+                $num1 = $data[0];
                 $num2 = $data[2];
                 $number = "{$num1} {$sign} {$num2}";
                 $correctAnswer = correctAnswerCalc($num1, $sign, $num2);
@@ -38,7 +38,7 @@ function runGame(string $rule, int $game): void
             case 3:
                 $data = generateNumberGcd();
                 $number = $data[0];
-                $num1 = $data[1]; 
+                $num1 = $data[1];
                 $num2 = $data[2];
                 $correctAnswer = correctAnswerGcd($num1, $num2);
                 break;
