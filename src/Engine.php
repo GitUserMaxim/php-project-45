@@ -29,12 +29,12 @@ function runGame(string $rule, int $game): void
                 break;
             case 2:
                 $number = generateNumberCalc();
-                list($num1, $sign, $num2) = sscanf($number, "%d %s %d");
+                [$num1, $sign, $num2] = sscanf($number, "%d %s %d");
                 $correctAnswer = correctAnswerCalc($num1, $sign, $num2);
                 break;
             case 3:
                 $number = generateNumberGcd();
-                list($num1, $num2) = sscanf($number, "%d %d");
+                [$num1, $num2] = sscanf($number, "%d %d");
                 $correctAnswer = correctAnswerGcd($num1, $num2);
                 break;
             case 4:
