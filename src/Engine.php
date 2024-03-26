@@ -18,29 +18,31 @@ function runGame(string $rule, int $game): void
 {
     $name = welcome();
     line($rule);
+    $number = '';
+    $correctAnswer = '';
     $correctAnswerCount = 0;
     while ($correctAnswerCount < 3) {
         switch ($game) {
-            case '1':
+            case 1:
                 $number = generateNumberEven();
                 $correctAnswer = correctAnswerEven($number);
                 break;
-            case '2':
+            case 2:
                 $number = generateNumberCalc();
-                list($num1, $sign, $num2) = sscanf($number, "%d %s %d") ?? [null, null, null];
+                list($num1, $sign, $num2) = sscanf($number, "%d %s %d");
                 $correctAnswer = correctAnswerCalc($num1, $sign, $num2);
                 break;
-            case '3':
+            case 3:
                 $number = generateNumberGcd();
-                list($num1, $num2) = sscanf($number, "%d %d") ?? [null, null];
+                list($num1, $num2) = sscanf($number, "%d %d");
                 $correctAnswer = correctAnswerGcd($num1, $num2);
                 break;
-            case '4':
+            case 4:
                 $data = generateNumberProgression();
                 $number = $data['question'] ?? null;
-                $correctAnswer = $data['correctAnswer'] ?? null;
+                $correctAnswer = $data['correctAnswer'];
                 break;
-            case '5':
+            case 5:
                 $number = generateNumberPrime();
                 $correctAnswer = correctAnswerPrime($number) ? 'yes' : 'no';
                 break;
@@ -61,7 +63,7 @@ function runGame(string $rule, int $game): void
     }
 }
 
-function welcome()
+function welcome(): string
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');

@@ -18,6 +18,7 @@ function generateNumberCalc(): string
 }
 function correctAnswerCalc(int $num1, string $sign, int $num2): string
 {
+    $answer = '';
     switch ($sign) {
         case '+':
             $answer = $num1 + $num2;
@@ -31,14 +32,14 @@ function correctAnswerCalc(int $num1, string $sign, int $num2): string
     }
       return $answer;
 }
-function rulesCalc()
+function rulesCalc(): string
 {
     $rule = "What is the result of the expression?";
     return $rule;
 }
 
 
-function calcGame()
+function calcGame(): void
 {
     $game = 2;
     $rule = rulesCalc();
