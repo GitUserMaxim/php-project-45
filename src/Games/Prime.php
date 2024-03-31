@@ -2,9 +2,9 @@
 
 namespace BrainGames\Prime;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
-
 use function BrainGames\Engine\runGame;
+
+use const BrainGames\Engine\NUMBER_OF_ROUNDS;
 
 function generateNumberPrime(): int
 {
@@ -30,16 +30,15 @@ function correctAnswerPrime(int $number): bool
     }
         return true;
 }
-function rulesPrime(): string
-{
-    $rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    return $rule;
-}
-
-
 function primeGame(): void
 {
-    $game = 5;
-    $rule = rulesPrime();
-    runGame($rule, $game);
+    $rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    $data = [];
+    for ($i = 0; $i < NUMBER_OF_ROUNDS; $i++) {
+        $question = rand(1, 100);
+        $correctAnswer = correctAnswerPrime($question) ? 'yes' : 'no';
+
+        $data[] = [$question, $correctAnswer];
+    }
+    runGame($data, $rule);
 }

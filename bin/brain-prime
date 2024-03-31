@@ -1,6 +1,5 @@
 #!/usr/bin/env php
 <?php
-namespace BrainGames\Prime;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 
@@ -11,5 +10,7 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
+
+use function BrainGames\Prime\primeGame;
 
 primeGame();
