@@ -5,15 +5,18 @@ namespace BrainGames\Progression;
 use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\NUMBER_OF_ROUNDS;
+use const BrainGames\Engine\MIN_VALUE;
+use const BrainGames\Engine\MAX_VALUE;
 
-function progressionGame(): void
+const MIN_PROGRESSION_LENGTH = 5;
+function runProgressionGame(): void
 {
     $rule = "What number is missing in the progression?";
-    $data = [];
+    $gameData = [];
     for ($i = 0; $i < NUMBER_OF_ROUNDS; $i++) {
-        $start = rand(1, 10);
-        $diff = rand(1, 5);
-        $length = rand(5, 10);
+        $start = rand(MIN_VALUE, MAX_VALUE);
+        $diff = rand(MIN_VALUE, MIN_PROGRESSION_LENGTH);
+        $length = rand(MIN_PROGRESSION_LENGTH, MAX_VALUE);
 
         $progression = [];
         $hiddenIndex = rand(0, $length - 1);
@@ -28,7 +31,7 @@ function progressionGame(): void
         $question = implode(' ', $progression);
         $correctAnswer = (string)($start + $hiddenIndex * $diff);
 
-        $data[] = [$question, $correctAnswer];
+        $gameData[] = [$question, $correctAnswer];
     }
-        runGame($data, $rule);
+        runGame($gameData, $rule);
 }

@@ -5,8 +5,10 @@ namespace BrainGames\Calc;
 use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\NUMBER_OF_ROUNDS;
+use const BrainGames\Engine\MIN_VALUE;
+use const BrainGames\Engine\MAX_VALUE;
 
-function correctAnswerCalc(int $num1, string $sign, int $num2): string
+function calculate(int $num1, string $sign, int $num2): int
 {
     $answer = '';
     switch ($sign) {
@@ -19,24 +21,24 @@ function correctAnswerCalc(int $num1, string $sign, int $num2): string
         case '*':
             $answer = $num1 * $num2;
             break;
+        default:
+            break;
     }
-      return (string)$answer;
+      return (int) $answer;
 }
 
-function calcGame(): void
+function runCalcGame(): void
 {
     $rule = "What is the result of the expression?";
-    $data = [];
+    $gameData = [];
     for ($i = 0; $i < NUMBER_OF_ROUNDS; $i++) {
-        $num1 = rand(1, 10);
-        $num2 = rand(1, 10);
-        $num3 = rand(0, 2);
-        $signArr = ['+', '-', '*'];
-        $sign = $signArr[$num3];
-        $question = "{$num1} {$sign} {$num2}";
-        $correctAnswer = correctAnswerCalc($num1, $sign, $num2);
-
-        $data[] = [$question, $correctAnswer];
+        $operand1 = rand(MIN_VALUE, MAX_VALUE);
+        $operand2 = rand(MIN_VALUE, MAX_VALUE);
+        $operations = ['+', '-', '*'];
+        $operation = $operations[array_rand($operations)];
+        $question = "{$operand1} {$operation} {$operand2}";
+        $correctAnswer = (string)calculate($operand1, $operation, $operand2);
+        $gameData[] = [$question, $correctAnswer];
     }
-        runGame($data, $rule);
+        runGame($gameData, $rule);
 }

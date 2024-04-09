@@ -5,40 +5,38 @@ namespace BrainGames\Prime;
 use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\NUMBER_OF_ROUNDS;
+use const BrainGames\Engine\MIN_VALUE;
+use const BrainGames\Engine\MAX_VALUE;
 
-function generateNumberPrime(): int
-{
-    $number = rand(1, 100);
-    return $number;
-}
-function correctAnswerPrime(int $number): bool
+function isPrime(int $number): bool
 {
     if ($number <= 1) {
         return false;
     }
-    if ($number == 2) {
+    if ($number === 2) {
         return true;
     }
-    if ($number % 2 == 0) {
+    if ($number % 2 === 0) {
         return false;
     }
         $maxDivisor = sqrt($number);
     for ($i = 3; $i <= $maxDivisor; $i += 2) {
-        if ($number % $i == 0) {
+        if ($number % $i === 0) {
             return false;
         }
     }
         return true;
 }
-function primeGame(): void
+function runPrimeGame(): void
 {
     $rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    $data = [];
+    $gameData = [];
     for ($i = 0; $i < NUMBER_OF_ROUNDS; $i++) {
-        $question = rand(1, 100);
-        $correctAnswer = correctAnswerPrime($question) ? 'yes' : 'no';
+        $rndNum = rand(MIN_VALUE, MAX_VALUE);
+        $question = "{$rndNum}";
+        $correctAnswer = isPrime($rndNum) ? 'yes' : 'no';
 
-        $data[] = [$question, $correctAnswer];
+        $gameData[] = [$question, $correctAnswer];
     }
-    runGame($data, $rule);
+    runGame($gameData, $rule);
 }

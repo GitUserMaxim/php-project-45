@@ -5,27 +5,29 @@ namespace BrainGames\Gcd;
 use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\NUMBER_OF_ROUNDS;
+use const BrainGames\Engine\MIN_VALUE;
+use const BrainGames\Engine\MAX_VALUE;
 
-function correctAnswerGcd(int $num1, int $num2): string
+function generateCorrectAnswerGcd(int $num1, int $num2): int
 {
-    while ($num2 != 0) {
+    while ($num2 !== 0) {
         $temp = $num1 % $num2;
         $num1 = $num2;
         $num2 = $temp;
     }
 
-    return (string) $num1;
+    return $num1;
 }
-function gcdGame(): void
+function runGcdGame(): void
 {
     $rule = "Find the greatest common divisor of given numbers.";
-    $data = [];
+    $gameData = [];
     for ($i = 0; $i < NUMBER_OF_ROUNDS; $i++) {
-        $num1 = rand(1, 100);
-        $num2 = rand(1, 100);
-        $question = "{$num1} {$num2}";
-        $correctAnswer = correctAnswerGcd($num1, $num2);
-        $data[] = [$question, $correctAnswer];
+        $number1 = rand(MIN_VALUE, MAX_VALUE);
+        $number2 = rand(MIN_VALUE, MAX_VALUE);
+        $question = "{$number1} {$number2}";
+        $correctAnswer = (string)generateCorrectAnswerGcd($number1, $number2);
+        $gameData[] = [$question, $correctAnswer];
     }
-    runGame($data, $rule);
+    runGame($gameData, $rule);
 }
