@@ -19,4 +19,4 @@ brain-prime:
 brain-games:
 	bin/brain-games
 shit:
-	vendor/bin/phpstan analyse --level 8 src
+	vendor/bin/phpstan analyse --level 5 src

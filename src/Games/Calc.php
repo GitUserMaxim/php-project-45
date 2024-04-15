@@ -2,6 +2,8 @@
 
 namespace BrainGames\Calc;
 
+use Exception;
+
 use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\NUMBER_OF_ROUNDS;
@@ -10,21 +12,16 @@ use const BrainGames\Engine\MAX_VALUE;
 
 function calculate(int $num1, string $sign, int $num2): int
 {
-    $answer = '';
     switch ($sign) {
         case '+':
-            $answer = $num1 + $num2;
-            break;
+            return $num1 + $num2;
         case '-':
-            $answer = $num1 - $num2;
-            break;
+            return $num1 - $num2;
         case '*':
-            $answer = $num1 * $num2;
-            break;
+            return $num1 * $num2;
         default:
-            break;
+            throw new Exception('Unsupported operation sign');
     }
-      return (int) $answer;
 }
 
 function runCalcGame(): void
@@ -36,7 +33,7 @@ function runCalcGame(): void
         $operand2 = rand(MIN_VALUE, MAX_VALUE);
         $operations = ['+', '-', '*'];
         $operation = $operations[array_rand($operations)];
-        $question = "{$operand1} {$operation} {$operand2}";
+        $question = "$operand1 $operation $operand2";
         $correctAnswer = (string)calculate($operand1, $operation, $operand2);
         $gameData[] = [$question, $correctAnswer];
     }
